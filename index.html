@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.min.css">
     <title>KROK-STREET</title>
 </head>
@@ -44,8 +42,8 @@
                             <option value="toCheep" class="cost__filter__item">Від найдорожчого</option>
                         </select>
                         <div class="inStock__filter">
-                            <div class="inStock__swich" false>
-                                <div class="circle"></div>
+                            <div onclick="onlyInStock()" class="inStock__swich">
+                                <div class="circle" isActive="false"></div>
                             </div>
                             <p class="inStock__text">Тільки в наявності</p>
                         </div>
@@ -189,6 +187,22 @@
             </div>
         </section>
 
+        <div class="backdrop">
+            <div class="products__modal">
+                <img src="" alt="" class="modal__img">
+                <div class="modal__content">
+                    <p class="modal__category"></p>
+                    <h3 class="modal__title"></h3>
+                    <p class="modal__price"></p>
+                    <p class="modal__info"></p>
+                    <div class="modal__sizeSelect"></div>
+                    <div class="modal__numberSelect"></div>
+                    <p class="modal__inStock"></p>
+                    <button class="modal__addToCart"></button>
+                </div>
+            </div>
+        </div>
+
         <section class="about" id="about"></section>
         <section class="contacts" id="contacts"></section>
     </body>
@@ -201,3 +215,40 @@
 </body>
 
 </html>
+
+<footer class="footer">
+      <div class="container">
+        <div class="footer__about">
+          <div class="footer__logo"><img src="./logo.png" alt="" /></div>
+
+          <p class="footer__text">Вулична культура в кожній деталі.</p>
+        </div>
+        <div class="footer__columns">
+          <div class="footer__column">
+            <h3 class="footer__title">Навігація</h3>
+
+            <a href="#" class="footer__link">Головна</a>
+            <a href="#katalog" class="footer__link">Каталог</a>
+            <a href="#" class="footer__link">Про нас</a>
+            <a href="#" class="footer__link">Контакти</a>
+          </div>
+          <div class="footer__column">
+            <h3 class="footer__title">Категорії</h3>
+
+            <a href="#katalog" onclick="selectCategory(`sneakers`)" class="footer__link">Кросівки</a>
+            <a href="#katalog" onclick="selectCategory(`hoodies`)"class="footer__link">Худі</a>
+            <a href="#katalog" onclick="selectCategory(`caps`)"class="footer__link">Кепки</a>
+            <a href="#katalog" onclick="selectCategory(`t-shirts`)"class="footer__link">Футболки</a>
+          </div>
+          <div class="footer__column">
+            <h3 class="footer__title">Контакти</h3>
+
+            <a href="#" class="footer__link">hello@krokstreet.ua</a>
+            <a href="#" class="footer__link">+380 (67) 123-45-67</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2026 KROK STREET. Навчальний проект.</p>
+      </div>
+    </footer>

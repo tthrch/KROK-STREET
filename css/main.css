@@ -6,7 +6,7 @@
 
 body {
   scroll-behavior: smooth;
-  font-family: "Google Sans", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .container {
@@ -137,9 +137,9 @@ li {
   width: 21px;
   height: 21px;
   border-radius: 50%;
-  background-color: #2C2C31;
+  background-color: #A3A3AB;
 }
-.katalog__filterBox .filters .inStock__filter .inStock__swich .active__swich {
+.katalog__filterBox .filters .inStock__filter .inStock__swich #active__swich {
   background-color: white;
   align-self: flex-end;
 }
@@ -158,6 +158,13 @@ li {
   color: rgb(255, 51, 14);
 }
 
+.katalog__productsNumber {
+  font-size: 20px;
+  color: #A3A3AB;
+  margin: 39px 0px;
+  margin-left: 10px;
+}
+
 .katalog__products {
   width: 100%;
   display: flex;
@@ -168,6 +175,7 @@ li {
 .katalog__products .katalog__product {
   width: 301px;
   height: 515px;
+  position: relative;
   background-color: #1E1E22;
   border: 1px solid #2C2C31;
   border-radius: 20px;
@@ -206,6 +214,14 @@ li {
   font-size: 20px;
   font-weight: 700;
 }
+.katalog__products .katalog__product #product__price__outDiscount {
+  width: 246px;
+  color: #5F5F61;
+  text-decoration: line-through;
+  font-size: 20px;
+  font-weight: 700;
+  padding-left: 25px;
+}
 .katalog__products .katalog__product .product__button {
   width: 246px;
   height: 52px;
@@ -215,16 +231,32 @@ li {
   cursor: pointer;
 }
 .katalog__products .katalog__product .discount__alert {
+  position: absolute;
+  top: 15px;
+  left: 15px;
   width: 84px;
   height: 30px;
   background-color: #FFFFFF;
   color: #000000;
   font-size: 14px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(102, 102, 102);
 }
 .katalog__products .katalog__product .outStock__alert {
+  position: absolute;
+  top: 15px;
+  left: 15px;
   width: 170px;
   height: 30px;
   background-color: rgba(19, 19, 22, 0.6705882353);
   color: #FFFFFF;
   font-size: 14px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(102, 102, 102);
 }/*# sourceMappingURL=main.css.map */
