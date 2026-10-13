@@ -1,0 +1,102 @@
+/* SECTION CONTACTS */
+
+.contacts {
+  font-family: "Inter", sans-serif;
+  background-color: $contacts-bg;
+  padding: 0 15px;
+  height: 711px;
+}
+
+.contacts__title {
+  font-family: "Onest", sans-serif;
+  font-size: 64px;
+  font-weight: 400;
+  color: $contacts-title;
+}
+
+.contacts__info {
+  width: 500px;
+  margin-left: 80px;
+}
+
+.contacts__img {
+  border: 2px solid $contacts-border;
+  width: 571px;
+  height: 405px;
+  background-color: $about-card-bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 17px;
+  transition-duration: 0.2s;
+  transition-property: color, border-color;
+  transition-timing-function: ease;
+  transition-delay: 200ms;
+}
+
+.contacts__img:hover {
+  border-color: $contacts-title;
+}
+
+.contacts__image-item {
+  width: 138px;
+  height: 170px;
+}
+
+.contacts__text {
+  font-size: 20px;
+  color: $contacts-text;
+}
+
+.contacts__list {
+  margin-top: 60px;
+}
+
+.contacts__item {
+  display: flex;
+  margin-top: 25px;
+}
+
+.contacts__label {
+  font-size: 20px;
+  color: $contacts-text;
+  margin-right: 60px;
+  font-weight: 300;
+}
+
+.contacts__value {
+  color: $contacts-value;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.contacts__social {
+  font-weight: 400;
+  color: $contacts-text;
+  font-size: 20px;
+  border: 1px solid $contacts-social-border;
+  text-decoration: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-right: 25px;
+  transition-duration: 0.2s;
+  transition-property: color, border-color;
+  transition-timing-function: ease;
+  transition-delay: 200ms;
+}
+
+.contacts__social:hover {
+  color: $contacts-hover;
+  border-color: $contacts-hover;
+}
+
+.contacts__socials {
+  height: 40px;
+  margin-top: 20px;
+  display: flex;
+}
