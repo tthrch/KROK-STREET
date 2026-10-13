@@ -1,222 +1,299 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"> -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.min.css" />
     <title>KROK-STREET</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header></header>
 
-    <body>
-        <section class="hero" id="hero"></section>
-        <section class="katalog" id="katalog">
-            <div class="container">
-                <div class="katalog__textBox">
-                    <h2 data-aos="fade-up-right" class="katalog__title">Каталог</h2>
-                    <p data-aos="fade-up" class="katalog__subtitle">Обирай категорію, фільтруй за ціною та розміром —
-                        знайди
-                        <br>свій образ.
-                    </p>
+    <main>
+       <section class="hero" id="hero"></section> 
+      <section class="katalog" id="katalog">
+        <div class="container">
+          <div class="katalog__textBox">
+            <h2 data-aos="fade-up-right" class="katalog__title">Каталог</h2>
+            <p data-aos="fade-up" class="katalog__subtitle">
+              Обирай категорію, фільтруй за ціною та розміром — знайди
+              <br />свій образ.
+            </p>
+          </div>
+
+          <ul data-aos="fade-up-right" class="katalog__categoryFilter">
+            <li
+              onclick="selectCategory(`all`)"
+              id="active__category"
+              class="category"
+            >
+              Усе
+            </li>
+            <li onclick="selectCategory(`sneakers`)" class="category">
+              Кросівки
+            </li>
+            <li onclick="selectCategory(`hoodies`)" class="category">Худі</li>
+            <li onclick="selectCategory(`caps`)" class="category">Кепки</li>
+            <li onclick="selectCategory(`t-shirts`)" class="category">
+              Футболки
+            </li>
+          </ul>
+          <div data-aos="fade-down" class="katalog__filterBox">
+            <h3 class="filterBox__title">Сортування</h3>
+            <div class="filters">
+              <select onchange="costFilter(this.value)" class="cost__filter">
+                <option value="default" class="cost__filter__item" selected>
+                  За замовчуванням
+                </option>
+                <option value="toExpensvive" class="cost__filter__item">
+                  Від найдешевшого
+                </option>
+                <option value="toCheep" class="cost__filter__item">
+                  Від найдорожчого
+                </option>
+              </select>
+              <div class="inStock__filter">
+                <div onclick="onlyInStock()" class="inStock__swich">
+                  <div class="circle" isActive="false"></div>
                 </div>
-
-                <ul data-aos="fade-up-right" class="katalog__categoryFilter">
-                    <li onclick="selectCategory(`all`)" id="active__category" class="category">Усе</li>
-                    <li onclick="selectCategory(`sneakers`)" class="category">Кросівки</li>
-                    <li onclick="selectCategory(`hoodies`)" class="category">Худі</li>
-                    <li onclick="selectCategory(`caps`)" class="category">Кепки</li>
-                    <li onclick="selectCategory(`t-shirts`)" class="category">Футболки</li>
-                </ul>
-                <div data-aos="fade-down" class="katalog__filterBox">
-                    <h3 class="filterBox__title">Сортування</h3>
-                    <div class="filters">
-                        <select onchange="costFilter(this.value)" class="cost__filter">
-                            <option value="default" class="cost__filter__item" selected>За замовчуванням</option>
-                            <option value="toExpensvive" class="cost__filter__item">Від найдешевшого</option>
-                            <option value="toCheep" class="cost__filter__item">Від найдорожчого</option>
-                        </select>
-                        <div class="inStock__filter">
-                            <div onclick="onlyInStock()" class="inStock__swich">
-                                <div class="circle" isActive="false"></div>
-                            </div>
-                            <p class="inStock__text">Тільки в наявності</p>
-                        </div>
-                        <p onclick="resetFilters()" class="reset__filters">Скинути фільтри</p>
-
-                    </div>
-                </div>
-
-                <p class="katalog__productsNumber"></p>
-                <ul class="katalog__products">
-
-                    <li class="katalog__product">
-                        <img src="./imgs/katalog/vortex-runner.webp" alt="" class="product__img">
-                        <p class="product__kategory">Кросівки</p>
-                        <h3 class="product__title">Кросівки Vortex Runner</h3>
-                        <p class="product__price">2 399 ₴</p>
-                        <button class="product__button">У кошик</button>
-                    </li>
-
-                    <li class="katalog__product">
-                        <img src="./imgs/katalog/midnight-court-runner.webp" alt="" class="product__img">
-                        <p class="product__kategory">Кросівки</p>
-                        <h3 class="product__title">Кросівки Midnight Court</h3>
-                        <p class="product__price">1 899 ₴</p>
-                        <button class="product__button">У кошик</button>
-                    </li>
-
-                    <li class="katalog__product">
-                        <img src="./imgs/katalog/lime-pulse.webp" alt="" class="product__img">
-                        <p class="product__kategory">Кросівки</p>
-                        <h3 class="product__title">Кросівки Lime Pulse</h3>
-                        <p class="product__price">2 199 ₴</p>
-                        <button class="product__button">У кошик</button>
-                    </li>
-
-                    <li class="katalog__product">
-                        <img src="./imgs/katalog/steel-frame.webp" alt="" class="product__img">
-                        <p class="product__kategory">Кросівки</p>
-                        <h3 class="product__title">Кросівки Steel Frame</h3>
-                        <p class="product__price">2 650 ₴</p>
-                        <button class="product__button">У кошик</button>
-                    </li>
-
-                    <li class="katalog__product">
-                        <img src="./imgs/katalog/blockletter.webp" alt="" class="product__img">
-                        <p class="product__kategory">Худі</p>
-                        <h3 class="product__title">Худі Blockletter</h3>
-                        <p class="product__price">1 450 ₴</p>
-                        <button class="product__button">У кошик</button>
-                    </li>
-
-                    <li class="katalog__product">
-                        <img src="./imgs/katalog/cloud-wash.webp" alt="" class="product__img">
-                        <p class="product__kategory">Худі</p>
-                        <h3 class="product__title">Худі Cloudwash</h3>
-                        <p class="product__price">1 590 ₴</p>
-                        <button class="product__button">У кошик</button>
-                    </li>
-
-                    <li class="katalog__product">
-                        <img src="./imgs/katalog/night-signal.webp" alt="" class="product__img">
-                        <p class="product__kategory">Худі</p>
-                        <h3 class="product__title">Худі Night Signal</h3>
-                        <p class="product__price">1 690 ₴</p>
-                        <button class="product__button">У кошик</button>
-                    </li>
-
-                    <li class="katalog__product">
-                        <img src="./imgs/katalog/concrete.webp" alt="" class="product__img">
-                        <p class="product__kategory">Худі</p>
-                        <h3 class="product__title">Худі Concrete</h3>
-                        <p class="product__price">1 380 ₴</p>
-                        <button class="product__button">У кошик</button>
-                    </li>
-
-                    <li class="katalog__product">
-                        <img src="./imgs/katalog/low-arc.webp" alt="" class="product__img">
-                        <p class="product__kategory">Кепки</p>
-                        <h3 class="product__title">Кепка Low Arc</h3>
-                        <p class="product__price">599 ₴</p>
-                        <button class="product__button">У кошик</button>
-                    </li>
-
-                    <li class="katalog__product">
-                        <img src="./imgs/katalog/fieldwork.webp" alt="" class="product__img">
-                        <p class="product__kategory">Кепки</p>
-                        <h3 class="product__title">Кепка Fieldwork</h3>
-                        <p class="product__price">649 ₴</p>
-                        <button class="product__button">У кошик</button>
-                    </li>
-
-                    <li class="katalog__product">
-                        <img src="./imgs/katalog/nightshade.webp" alt="" class="product__img">
-                        <p class="product__kategory">Кепки</p>
-                        <h3 class="product__title">Кепка Nightshade</h3>
-                        <p class="product__price">620 ₴</p>
-                        <button class="product__button">У кошик</button>
-                    </li>
-
-                    <li class="katalog__product">
-                        <img src="./imgs/katalog/sunline.webp" alt="" class="product__img">
-                        <p class="product__kategory">Кепки</p>
-                        <h3 class="product__title">Кепка Sunline</h3>
-                        <p class="product__price">549 ₴</p>
-                        <button class="product__button">У кошик</button>
-                    </li>
-
-                    <li class="katalog__product">
-                        <img src="./imgs/katalog/base-tee.webp" alt="" class="product__img">
-                        <p class="product__kategory">Футболки</p>
-                        <h3 class="product__title">Футболка Base Tee</h3>
-                        <p class="product__price">490 ₴</p>
-                        <button class="product__button">У кошик</button>
-                    </li>
-
-                    <li class="katalog__product">
-                        <img src="./imgs/katalog/blockprint.webp" alt="" class="product__img">
-                        <p class="product__kategory">Футболки</p>
-                        <h3 class="product__title">Футболка Blockprint</h3>
-                        <p class="product__price">590 ₴</p>
-                        <button class="product__button">У кошик</button>
-                    </li>
-
-                    <li class="katalog__product">
-                        <img src="./imgs/katalog/skyline.webp" alt="" class="product__img">
-                        <p class="product__kategory">Футболки</p>
-                        <h3 class="product__title">Футболка Skyline</h3>
-                        <p class="product__price">540 ₴</p>
-                        <button class="product__button">У кошик</button>
-                    </li>
-
-                    <li class="katalog__product">
-                        <img src="./imgs/katalog/monologo.webp" alt="" class="product__img">
-                        <p class="product__kategory">Футболки</p>
-                        <h3 class="product__title">Футболка Mono Logo</h3>
-                        <p class="product__price">470 ₴</p>
-                        <button class="product__button">У кошик</button>
-                    </li>
-                </ul>
-
+                <p class="inStock__text">Тільки в наявності</p>
+              </div>
+              <p onclick="resetFilters()" class="reset__filters">
+                Скинути фільтри
+              </p>
             </div>
-        </section>
+          </div>
+
+          <p class="katalog__productsNumber"></p>
+          <ul class="katalog__products">
+            <li class="katalog__product">
+              <img
+                src="./imgs/katalog/vortex-runner.webp"
+                alt=""
+                class="product__img"
+              />
+              <p class="product__kategory">Кросівки</p>
+              <h3 class="product__title">Кросівки Vortex Runner</h3>
+              <p class="product__price">2 399 ₴</p>
+              <button class="product__button">У кошик</button>
+            </li>
+
+            <li class="katalog__product">
+              <img
+                src="./imgs/katalog/midnight-court-runner.webp"
+                alt=""
+                class="product__img"
+              />
+              <p class="product__kategory">Кросівки</p>
+              <h3 class="product__title">Кросівки Midnight Court</h3>
+              <p class="product__price">1 899 ₴</p>
+              <button class="product__button">У кошик</button>
+            </li>
+
+            <li class="katalog__product">
+              <img
+                src="./imgs/katalog/lime-pulse.webp"
+                alt=""
+                class="product__img"
+              />
+              <p class="product__kategory">Кросівки</p>
+              <h3 class="product__title">Кросівки Lime Pulse</h3>
+              <p class="product__price">2 199 ₴</p>
+              <button class="product__button">У кошик</button>
+            </li>
+
+            <li class="katalog__product">
+              <img
+                src="./imgs/katalog/steel-frame.webp"
+                alt=""
+                class="product__img"
+              />
+              <p class="product__kategory">Кросівки</p>
+              <h3 class="product__title">Кросівки Steel Frame</h3>
+              <p class="product__price">2 650 ₴</p>
+              <button class="product__button">У кошик</button>
+            </li>
+
+            <li class="katalog__product">
+              <img
+                src="./imgs/katalog/blockletter.webp"
+                alt=""
+                class="product__img"
+              />
+              <p class="product__kategory">Худі</p>
+              <h3 class="product__title">Худі Blockletter</h3>
+              <p class="product__price">1 450 ₴</p>
+              <button class="product__button">У кошик</button>
+            </li>
+
+            <li class="katalog__product">
+              <img
+                src="./imgs/katalog/cloud-wash.webp"
+                alt=""
+                class="product__img"
+              />
+              <p class="product__kategory">Худі</p>
+              <h3 class="product__title">Худі Cloudwash</h3>
+              <p class="product__price">1 590 ₴</p>
+              <button class="product__button">У кошик</button>
+            </li>
+
+            <li class="katalog__product">
+              <img
+                src="./imgs/katalog/night-signal.webp"
+                alt=""
+                class="product__img"
+              />
+              <p class="product__kategory">Худі</p>
+              <h3 class="product__title">Худі Night Signal</h3>
+              <p class="product__price">1 690 ₴</p>
+              <button class="product__button">У кошик</button>
+            </li>
+
+            <li class="katalog__product">
+              <img
+                src="./imgs/katalog/concrete.webp"
+                alt=""
+                class="product__img"
+              />
+              <p class="product__kategory">Худі</p>
+              <h3 class="product__title">Худі Concrete</h3>
+              <p class="product__price">1 380 ₴</p>
+              <button class="product__button">У кошик</button>
+            </li>
+
+            <li class="katalog__product">
+              <img
+                src="./imgs/katalog/low-arc.webp"
+                alt=""
+                class="product__img"
+              />
+              <p class="product__kategory">Кепки</p>
+              <h3 class="product__title">Кепка Low Arc</h3>
+              <p class="product__price">599 ₴</p>
+              <button class="product__button">У кошик</button>
+            </li>
+
+            <li class="katalog__product">
+              <img
+                src="./imgs/katalog/fieldwork.webp"
+                alt=""
+                class="product__img"
+              />
+              <p class="product__kategory">Кепки</p>
+              <h3 class="product__title">Кепка Fieldwork</h3>
+              <p class="product__price">649 ₴</p>
+              <button class="product__button">У кошик</button>
+            </li>
+
+            <li class="katalog__product">
+              <img
+                src="./imgs/katalog/nightshade.webp"
+                alt=""
+                class="product__img"
+              />
+              <p class="product__kategory">Кепки</p>
+              <h3 class="product__title">Кепка Nightshade</h3>
+              <p class="product__price">620 ₴</p>
+              <button class="product__button">У кошик</button>
+            </li>
+
+            <li class="katalog__product">
+              <img
+                src="./imgs/katalog/sunline.webp"
+                alt=""
+                class="product__img"
+              />
+              <p class="product__kategory">Кепки</p>
+              <h3 class="product__title">Кепка Sunline</h3>
+              <p class="product__price">549 ₴</p>
+              <button class="product__button">У кошик</button>
+            </li>
+
+            <li class="katalog__product">
+              <img
+                src="./imgs/katalog/base-tee.webp"
+                alt=""
+                class="product__img"
+              />
+              <p class="product__kategory">Футболки</p>
+              <h3 class="product__title">Футболка Base Tee</h3>
+              <p class="product__price">490 ₴</p>
+              <button class="product__button">У кошик</button>
+            </li>
+
+            <li class="katalog__product">
+              <img
+                src="./imgs/katalog/blockprint.webp"
+                alt=""
+                class="product__img"
+              />
+              <p class="product__kategory">Футболки</p>
+              <h3 class="product__title">Футболка Blockprint</h3>
+              <p class="product__price">590 ₴</p>
+              <button class="product__button">У кошик</button>
+            </li>
+
+            <li class="katalog__product">
+              <img
+                src="./imgs/katalog/skyline.webp"
+                alt=""
+                class="product__img"
+              />
+              <p class="product__kategory">Футболки</p>
+              <h3 class="product__title">Футболка Skyline</h3>
+              <p class="product__price">540 ₴</p>
+              <button class="product__button">У кошик</button>
+            </li>
+
+            <li class="katalog__product">
+              <img
+                src="./imgs/katalog/monologo.webp"
+                alt=""
+                class="product__img"
+              />
+              <p class="product__kategory">Футболки</p>
+              <h3 class="product__title">Футболка Mono Logo</h3>
+              <p class="product__price">470 ₴</p>
+              <button class="product__button">У кошик</button>
+            </li>
+          </ul>
+        </div>
+      </section>
 
         <div class="backdrop">
             <div class="products__modal">
-                <div class="modal__outStock"><span>немає в наявності</span></div>
-                <div class="modal__close" onclick="openModal(`close`)"><img src="./imgs/katalog/close.svg" alt="close"></div>
-                <img src="./imgs/katalog/vortex-runner.webp" alt="" class="modal__img">
+                <img src="" alt="" class="modal__img">
                 <div class="modal__content">
-                    <p class="modal__category">URBN · Кросівки</p>
-                    <h3 class="modal__title"><span class="modal__title__category">Кросівки</span> Vortex Runner</h3>
-                    <p class="modal__price">2 399 ₴</p>
-                    <p class="modal__info">Легкі бігові кросівки з рельєфною підошвою — тримають зчеплення на будь-якому асфальті.</p>
-                    <div class="modal__sizeSelect">
-                        <span class="sizeSelect__text">Розмір</span>
-                        <ul class="sizeSelect__sizes">
-                            <li class="sizeSelect__size" id="active__size">40</li>
-                            <li class="sizeSelect__size">41</li>
-                            <li class="sizeSelect__size">42</li>
-                            <li class="sizeSelect__size">43</li>
-                            <li class="sizeSelect__size">44</li>
-                        </ul>
-                    </div>
-                    <div class="modal__numberSelect">
-                        <p class="modal__numberSelect__text">Кількість</p>
-                        <div class="numberSelect">
-                            <span class="numberMinus">-</span>
-                            <span class="number">1</span>
-                            <span class="numberPlus">+</span>
-                        </div>
-                    </div>
-                    <p class="modal__inStock">Є в наявності</p>
-                    <button type="button" class="modal__addToCart">Додати в кошик</button>
+                    <p class="modal__category"></p>
+                    <h3 class="modal__title"></h3>
+                    <p class="modal__price"></p>
+                    <p class="modal__info"></p>
+                    <div class="modal__sizeSelect"></div>
+                    <div class="modal__numberSelect"></div>
+                    <p class="modal__inStock"></p>
+                    <button class="modal__addToCart"></button>
                 </div>
             </div>
         </div>
@@ -233,3 +310,40 @@
 </body>
 
 </html>
+
+<footer class="footer">
+      <div class="container">
+        <div class="footer__about">
+          <div class="footer__logo"><img src="./logo.png" alt="" /></div>
+
+          <p class="footer__text">Вулична культура в кожній деталі.</p>
+        </div>
+        <div class="footer__columns">
+          <div class="footer__column">
+            <h3 class="footer__title">Навігація</h3>
+
+            <a href="#" class="footer__link">Головна</a>
+            <a href="#katalog" class="footer__link">Каталог</a>
+            <a href="#" class="footer__link">Про нас</a>
+            <a href="#" class="footer__link">Контакти</a>
+          </div>
+          <div class="footer__column">
+            <h3 class="footer__title">Категорії</h3>
+
+            <a href="#katalog" onclick="selectCategory(`sneakers`)" class="footer__link">Кросівки</a>
+            <a href="#katalog" onclick="selectCategory(`hoodies`)"class="footer__link">Худі</a>
+            <a href="#katalog" onclick="selectCategory(`caps`)"class="footer__link">Кепки</a>
+            <a href="#katalog" onclick="selectCategory(`t-shirts`)"class="footer__link">Футболки</a>
+          </div>
+          <div class="footer__column">
+            <h3 class="footer__title">Контакти</h3>
+
+            <a href="#" class="footer__link">hello@krokstreet.ua</a>
+            <a href="#" class="footer__link">+380 (67) 123-45-67</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2026 KROK STREET. Навчальний проект.</p>
+      </div>
+    </footer>
