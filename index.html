@@ -189,16 +189,34 @@
 
         <div class="backdrop">
             <div class="products__modal">
-                <img src="" alt="" class="modal__img">
+                <div class="modal__outStock"><span>немає в наявності</span></div>
+                <div class="modal__close" onclick="openModal(`close`)"><img src="./imgs/katalog/close.svg" alt="close"></div>
+                <img src="./imgs/katalog/vortex-runner.webp" alt="" class="modal__img">
                 <div class="modal__content">
-                    <p class="modal__category"></p>
-                    <h3 class="modal__title"></h3>
-                    <p class="modal__price"></p>
-                    <p class="modal__info"></p>
-                    <div class="modal__sizeSelect"></div>
-                    <div class="modal__numberSelect"></div>
-                    <p class="modal__inStock"></p>
-                    <button class="modal__addToCart"></button>
+                    <p class="modal__category">URBN · Кросівки</p>
+                    <h3 class="modal__title"><span class="modal__title__category">Кросівки</span> Vortex Runner</h3>
+                    <p class="modal__price">2 399 ₴</p>
+                    <p class="modal__info">Легкі бігові кросівки з рельєфною підошвою — тримають зчеплення на будь-якому асфальті.</p>
+                    <div class="modal__sizeSelect">
+                        <span class="sizeSelect__text">Розмір</span>
+                        <ul class="sizeSelect__sizes">
+                            <li class="sizeSelect__size" id="active__size">40</li>
+                            <li class="sizeSelect__size">41</li>
+                            <li class="sizeSelect__size">42</li>
+                            <li class="sizeSelect__size">43</li>
+                            <li class="sizeSelect__size">44</li>
+                        </ul>
+                    </div>
+                    <div class="modal__numberSelect">
+                        <p class="modal__numberSelect__text">Кількість</p>
+                        <div class="numberSelect">
+                            <span class="numberMinus">-</span>
+                            <span class="number">1</span>
+                            <span class="numberPlus">+</span>
+                        </div>
+                    </div>
+                    <p class="modal__inStock">Є в наявності</p>
+                    <button type="button" class="modal__addToCart">Додати в кошик</button>
                 </div>
             </div>
         </div>
@@ -215,40 +233,3 @@
 </body>
 
 </html>
-
-<footer class="footer">
-      <div class="container">
-        <div class="footer__about">
-          <div class="footer__logo"><img src="./logo.png" alt="" /></div>
-
-          <p class="footer__text">Вулична культура в кожній деталі.</p>
-        </div>
-        <div class="footer__columns">
-          <div class="footer__column">
-            <h3 class="footer__title">Навігація</h3>
-
-            <a href="#" class="footer__link">Головна</a>
-            <a href="#katalog" class="footer__link">Каталог</a>
-            <a href="#" class="footer__link">Про нас</a>
-            <a href="#" class="footer__link">Контакти</a>
-          </div>
-          <div class="footer__column">
-            <h3 class="footer__title">Категорії</h3>
-
-            <a href="#katalog" onclick="selectCategory(`sneakers`)" class="footer__link">Кросівки</a>
-            <a href="#katalog" onclick="selectCategory(`hoodies`)"class="footer__link">Худі</a>
-            <a href="#katalog" onclick="selectCategory(`caps`)"class="footer__link">Кепки</a>
-            <a href="#katalog" onclick="selectCategory(`t-shirts`)"class="footer__link">Футболки</a>
-          </div>
-          <div class="footer__column">
-            <h3 class="footer__title">Контакти</h3>
-
-            <a href="#" class="footer__link">hello@krokstreet.ua</a>
-            <a href="#" class="footer__link">+380 (67) 123-45-67</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <p class="footer__copyright">© 2026 KROK STREET. Навчальний проект.</p>
-      </div>
-    </footer>
