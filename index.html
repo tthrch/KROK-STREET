@@ -28,19 +28,135 @@
   </head>
 
   <body>
-    <header></header>
+    <header class="header">
+      <div class="ticker">
+        <div class="ticker__track">
+          <div class="ticker__group">
+            <span class="ticker__item">Доставка по всій Україні</span>
+            <span class="ticker__item">Обмін протягом 14 днів</span>
+            <span class="ticker__item">Нова колекція вже в каталозі</span>
+          </div>
+
+          <div class="ticker__group">
+            <span class="ticker__item">Доставка по всій Україні</span>
+            <span class="ticker__item">Обмін протягом 14 днів</span>
+            <span class="ticker__item">Нова колекція вже в каталозі</span>
+          </div>
+
+          <div class="ticker__group">
+            <span class="ticker__item">Доставка по всій Україні</span>
+            <span class="ticker__item">Обмін протягом 14 днів</span>
+            <span class="ticker__item">Нова колекція вже в каталозі</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="header__inner container">
+        <a href="#" class="logo">KROK <span class="logo__dot"></span> STREET</a>
+
+        <nav class="menu">
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a href="#" class="menu__link">Головна</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Каталог</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Про нас</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Контакти</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__actions">
+          <input class="search" type="search" placeholder="Пошук товарів..." />
+
+          <button class="cart" type="button" aria-label="Кошик">
+            <svg
+              class="cart__icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M3 4h3l2.5 10h9l3-7H7" />
+              <circle cx="9" cy="19" r="1.5" fill="currentColor" />
+              <circle cx="18" cy="19" r="1.5" fill="currentColor" />
+            </svg>
+            <span class="cart__count">0</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="modal">
+        <div class="modal__overlay"></div>
+
+        <aside
+          class="modal__panel"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Кошик"
+        >
+          <div class="modal__header">
+            <h2 class="modal__title">
+              Кошик <span class="modal__count">[0]</span>
+            </h2>
+            <button class="modal__close" type="button" aria-label="Закрити">
+              <svg
+                class="modal__close-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                aria-hidden="true"
+              >
+                <path d="M6 6l12 12M18 6L6 18" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="modal__body">
+            <svg
+              class="modal__icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M3 4h3l2.5 10h9l3-7H7" />
+              <circle cx="9" cy="19" r="1.5" fill="currentColor" />
+              <circle cx="18" cy="19" r="1.5" fill="currentColor" />
+            </svg>
+            <p class="modal__text">Кошик поки порожній</p>
+            <button class="btn btn--primary modal__btn" type="button">
+              Дивитись каталог
+            </button>
+          </div>
+        </aside>
+      </div>
+    </header>
 
     <main>
        <section class="hero" id="hero"></section> 
-        <section class="katalog" id="katalog">
-            <div class="container">
-                <div class="katalog__textBox">
-                    <h2 data-aos="fade-up-right" class="katalog__title">Каталог</h2>
-                    <p data-aos="fade-up" class="katalog__subtitle">Обирай категорію, фільтруй за ціною та розміром —
-                        знайди
-                        <br>свій образ.
-                    </p>
-                </div>
+      <section class="katalog" id="katalog">
+        <div class="container">
+          <div class="katalog__textBox">
+            <h2 data-aos="fade-up-right" class="katalog__title">Каталог</h2>
+            <p data-aos="fade-up" class="katalog__subtitle">
+              Обирай категорію, фільтруй за ціною та розміром — знайди
+              <br />свій образ.
+            </p>
+          </div>
 
                 <ul data-aos="fade-up-right" class="katalog__categoryFilter">
                     <li onclick="selectCategory(`all`)" id="active__category" class="category">Усе</li>
