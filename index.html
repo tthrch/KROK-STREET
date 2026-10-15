@@ -352,13 +352,130 @@
                 </div>
             </div>
         </div>
-        <section class="about" id="about"></section>
-        <section class="contacts" id="contacts"></section>
+       <section class="about" id="about">
+        <div class="container container-about">
+          <div class="about__media">
+            <div class="about__card">
+              <div class="about__img__div">
+                <img
+                  src="./imgs/footer/image 11.svg"
+                  alt="Худі KROK STREET"
+                  class="about__img"
+                />
+              </div>
+              <div class="about__badge">
+                <p class="about__badge__text">Обирай свій стиль</p>
+              </div>
+            </div>
+          </div>
 
-<footer class="footer">
-      <div class="container">
+          <div class="about__content">
+            <h2 class="about__title">Про магазин</h2>
+
+            <div class="about__description">
+              <p class="about__description-p">
+                KROK STREET — це простір для тих, хто формує власний стиль на
+                стику спорту, музики та вуличного мистецтва. Ми відбираємо
+                кросівки, худі та аксесуари, які легко комбінувати між собою і
+                які витримують ритм справжнього міста.
+              </p>
+              <p>
+                Асортимент оновлюється щотижня, а розмірна сітка підходить під
+                різні типи фігури — від XS до XL і від 40-го до 44-го.
+              </p>
+            </div>
+
+            <div class="about__stats">
+              <div class="stat">
+                <span class="stats__number">4</span>
+                <span class="stats__label">категорії товарів</span>
+              </div>
+
+              <div class="stat">
+                <span class="stats__number">20+</span>
+                <span class="stats__label">позицій каталозі</span>
+              </div>
+
+              <div class="stat">
+                <span class="stats__number">14</span>
+                <span class="stats__label">позицій каталозі</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+         <section class="contacts">
+        <div class="container container-contacts">
+          <div class="contacts__info">
+            <h2 class="contacts__title">Контакти</h2>
+            <p class="contacts__text">
+              Є питання щодо розміру чи замовлення? Напиши нам — відповідаємо
+              швидко.
+            </p>
+
+            <div class="contacts__list">
+              <div class="contacts__item">
+                <p class="contacts__label">Адреса</p>
+                <p class="contacts__value">м. Київ, вул. Дизайнерська, 12</p>
+              </div>
+
+              <div class="contacts__item">
+                <p class="contacts__label">Телефон</p>
+                <p class="contacts__value">+380 (67) 123-45-67</p>
+              </div>
+
+              <div class="contacts__item">
+                <p class="contacts__label">Пошта</p>
+                <p class="contacts__value">hello@krokstreet.ua</p>
+              </div>
+
+              <div class="contacts__item">
+                <p class="contacts__label">Графік</p>
+                <p class="contacts__value">Пн–Нд, 10:00–20:00</p>
+              </div>
+            </div>
+
+            <div class="contacts__socials">
+              <a
+                class="contacts__social"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.instagram.com/"
+                >IG</a
+              >
+              <a
+                class="contacts__social"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://desktop.telegram.org/"
+                >TG</a
+              >
+              <a
+                class="contacts__social"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.tiktok.com/uk-UA/"
+                >TT</a
+              >
+            </div>
+          </div>
+
+          <div class="contacts__img">
+            <img
+              src="./imgs/footer/Frame 52.svg"
+              alt="mykola"
+              class="contacts__image-item"
+            />
+          </div>
+        </div>
+      </section>
+
+ <footer class="footer">
+      <div class="container footer-container">
         <div class="footer__about">
-          <div class="footer__logo"><img src="./logo.png" alt="" /></div>
+          <div class="footer__logo">
+            <img src="./imgs/footer/logo.png" alt="" />
+          </div>
 
           <p class="footer__text">Вулична культура в кожній деталі.</p>
         </div>
@@ -374,10 +491,30 @@
           <div class="footer__column">
             <h3 class="footer__title">Категорії</h3>
 
-            <a href="#katalog" onclick="selectCategory(`sneakers`)" class="footer__link">Кросівки</a>
-            <a href="#katalog" onclick="selectCategory(`hoodies`)"class="footer__link">Худі</a>
-            <a href="#katalog" onclick="selectCategory(`caps`)"class="footer__link">Кепки</a>
-            <a href="#katalog" onclick="selectCategory(`t-shirts`)"class="footer__link">Футболки</a>
+            <a
+              href="#katalog"
+              onclick="selectCategory(`sneakers`)"
+              class="footer__link"
+              >Кросівки</a
+            >
+            <a
+              href="#katalog"
+              onclick="selectCategory(`hoodies`)"
+              class="footer__link"
+              >Худі</a
+            >
+            <a
+              href="#katalog"
+              onclick="selectCategory(`caps`)"
+              class="footer__link"
+              >Кепки</a
+            >
+            <a
+              href="#katalog"
+              onclick="selectCategory(`t-shirts`)"
+              class="footer__link"
+              >Футболки</a
+            >
           </div>
           <div class="footer__column">
             <h3 class="footer__title">Контакти</h3>
@@ -392,8 +529,8 @@
       </div>
     </footer>
 
-        </body>
-    <footer></footer>
+       
+   
     <script src="./js/hero.js"></script>
     <script src="./js/katalog.js"></script>
     <script src="./js/footer.js"></script>
