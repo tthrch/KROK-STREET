@@ -1,5 +1,6 @@
 .katalog {
     background-color: $katalog-bg-color;
+   // padding: 140px;
 }
 
 .katalog__title {
@@ -41,7 +42,7 @@
         &:hover {
             color: white;
             border-color: white;
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.1);
         }
     }
 
@@ -179,13 +180,14 @@
         align-items: center;
         padding-bottom: 35px;
         overflow: hidden;
-        transition-duration: 0.2s;
-        transition-property: border-color;
+        transition-duration: 0.4s;
+        transition-property: border-color, transform;
         transition-timing-function: ease;
         transition-delay: 100ms;
 
         &:hover {
             border-color: $katalog-product-hover-border-color;
+            transform: scale(1.1);
         }
 
         .product__img {
@@ -229,6 +231,15 @@
             background-color: $katalog-product-button-bg-color;
             border: 1px solid $katalog-product-button-border-color;
             cursor: pointer;
+            transition-duration: 0.2s;
+            transition-property: box-shadow, color;
+            transition-timing-function: ease;
+            transition-delay: 100ms;
+
+            &:hover {
+                box-shadow: 0px 0px 5px 0px #FF3D1A;
+                color: #FF3D1A;
+            }
         }
 
         .discount__alert {
@@ -427,6 +438,16 @@
                     align-items: center;
                     gap: 21px;
                     color: white;
+                    transition-duration: 0.2s;
+                    transition-property: box-shadow, border-color;
+                    transition-timing-function: ease;
+                    transition-delay: 100ms;
+
+                    &:hover {
+                        box-shadow: 0px 0px 10px 0px #FF3D1A;
+                        border-color: #FF3D1A;
+                    }
+
 
                     &::selection {
                         background-color: transparent;
@@ -484,6 +505,7 @@
             color: #9595955e;
             font-size: 70px;
             font-weight: bold;
+            z-index: 1000;
             
             & > span {
                 transform: rotate(20deg);

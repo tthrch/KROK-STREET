@@ -555,7 +555,7 @@ img {
 .katalog__categoryFilter .category:hover {
   color: white;
   border-color: white;
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.1);
 }
 .katalog__categoryFilter #active__category {
   background: white;
@@ -681,13 +681,14 @@ img {
   align-items: center;
   padding-bottom: 35px;
   overflow: hidden;
-  transition-duration: 0.2s;
-  transition-property: border-color;
+  transition-duration: 0.4s;
+  transition-property: border-color, transform;
   transition-timing-function: ease;
   transition-delay: 100ms;
 }
 .katalog__products .katalog__product:hover {
   border-color: #FFFFFF;
+  transform: scale(1.1);
 }
 .katalog__products .katalog__product .product__img {
   width: 100%;
@@ -725,6 +726,14 @@ img {
   background-color: rgba(254, 254, 254, 0);
   border: 1px solid #2C2C31;
   cursor: pointer;
+  transition-duration: 0.2s;
+  transition-property: box-shadow, color;
+  transition-timing-function: ease;
+  transition-delay: 100ms;
+}
+.katalog__products .katalog__product .product__button:hover {
+  box-shadow: 0px 0px 5px 0px #FF3D1A;
+  color: #FF3D1A;
 }
 .katalog__products .katalog__product .discount__alert {
   position: absolute;
@@ -904,6 +913,14 @@ img {
   align-items: center;
   gap: 21px;
   color: white;
+  transition-duration: 0.2s;
+  transition-property: box-shadow, border-color;
+  transition-timing-function: ease;
+  transition-delay: 100ms;
+}
+.backdrop .products__modal .modal__content .modal__numberSelect .numberSelect:hover {
+  box-shadow: 0px 0px 10px 0px #FF3D1A;
+  border-color: #FF3D1A;
 }
 .backdrop .products__modal .modal__content .modal__numberSelect .numberSelect::-moz-selection {
   background-color: transparent;
@@ -955,6 +972,7 @@ img {
   color: rgba(149, 149, 149, 0.368627451);
   font-size: 70px;
   font-weight: bold;
+  z-index: 1000;
 }
 .backdrop .products__modal .modal__outStock > span {
   transform: rotate(20deg);
@@ -1617,8 +1635,13 @@ img {
   }
   .backdrop .products__modal {
     flex-direction: column;
-    width: 581px !important;
+    width: 100% !important;
     overflow-y: auto !important;
+    margin: 0 5px;
+    padding: 15px;
+  }
+  .backdrop .products__modal .modal__img {
+    height: 220px;
   }
   .backdrop .products__modal .modal__content {
     gap: 20px;

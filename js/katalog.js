@@ -228,8 +228,31 @@ function setProductsCount(number) {
 
 }
 
-// function costFilter(value) {
-// }
+let currentSort = `default`;
+
+function costFilter(value) {
+    currentSort = value;
+
+    let indexes = [];
+    for (let i = 0; i < products.length; i++) {
+        indexes.push(i);
+    }
+
+    switch (value) {
+        case `toExpensvive`:
+            indexes.sort((a, b) => products[a].priceWithDiscount - products[b].priceWithDiscount);
+            break;
+        case `toCheep`:
+            indexes.sort((a, b) => products[b].priceWithDiscount - products[a].priceWithDiscount);
+            break;
+        case `default`:
+            break;
+    }
+
+    for (let i = 0; i < indexes.length; i++) {
+        elements[indexes[i]].style.order = i;
+    }
+}
 
 function resetFilters() {
     if (isActive) {
@@ -238,6 +261,10 @@ function resetFilters() {
 
     if (categoryFilter !== `all`) {
         selectCategory(`all`);
+    }
+
+    if (currentSort !== `default`) {
+        costFilter(`default`);
     }
 }
 
