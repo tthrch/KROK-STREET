@@ -273,7 +273,7 @@ function openModal(index) {
     let modalBacdrop = document.querySelector(`.backdrop`);
     let modalImg = document.querySelector(`.modal__img`);
     let modalCategory = document.querySelector(`.modal__category`);
-    let modalTitle = document.querySelector(`.modal__title`);
+    let modalTitle = document.querySelector(`.products__modal .modal__title`);
     let modalInfo = document.querySelector(`.modal__info`);
     let modalPrice = document.querySelector(`.modal__price`);
     let modalOutStock = document.querySelector(`.modal__outStock`);
