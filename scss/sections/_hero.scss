@@ -18,9 +18,11 @@
     opacity: 0;
     scale: 0;
   }
+
   70% {
     scale: 1.15;
   }
+
   100% {
     opacity: 1;
     scale: 1;
@@ -47,13 +49,13 @@
   padding: 32px 0 120px;
   overflow: hidden;
 
-  // @include tablet {
-  //   padding: 60px 0 80px;
-  // }
+  @media (max-width: 1024px) {
+    padding: 60px 0 80px;
+  }
 
-  // @include mobile {
-  //   padding: 48px 0 72px;
-  // }
+  @media (max-width: 768px) {
+    padding: 48px 0 72px;
+  }
 
   &__inner {
     display: grid;
@@ -61,14 +63,14 @@
     align-items: center;
     gap: 24px;
 
-    // @include tablet {
-    //   grid-template-columns: repeat(2, minmax(0, 1fr));
-    // }
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr 1fr;
+    }
 
-    // @include mobile {
-    //   grid-template-columns: 1fr;
-    //   gap: 56px;
-    // }
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
   }
 
   &__label {
@@ -79,10 +81,10 @@
 
     @include appear(0.1s);
 
-    // @include mobile {
-    //   font-size: 16px;
-    //   margin-bottom: 16px;
-    // }
+    @media (max-width: 768px) {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
   }
 
   &__title {
@@ -96,15 +98,21 @@
     display: block;
     white-space: nowrap;
 
-    @for $i from 1 through 3 {
-      &:nth-child(#{$i}) {
-        @include appear(0.15s + 0.12s * $i);
-      }
+    &:nth-child(1) {
+      @include appear(0.27s);
     }
 
-    // @include tablet {
-    //   white-space: normal;
-    // }
+    &:nth-child(2) {
+      @include appear(0.39s);
+    }
+
+    &:nth-child(3) {
+      @include appear(0.51s);
+    }
+
+    @media (max-width: 1024px) {
+      white-space: normal;
+    }
   }
 
   &__text {
@@ -116,9 +124,10 @@
 
     @include appear(0.6s);
 
-    // @include mobile {
-    //   margin: 8px 0 28px;
-    // }
+    @media (max-width: 768px) {
+      margin: 8px 0 28px;
+      max-width: 100%;
+    }
   }
 
   &__buttons {
@@ -128,14 +137,14 @@
 
     @include appear(0.75s);
 
-    // @include phone {
-    //   flex-direction: column;
-    //   gap: 16px;
+    @media (max-width: 480px) {
+      flex-direction: column;
+      gap: 16px;
 
-    //   .btn {
-    //     width: 100%;
-    //   }
-    // }
+      .btn {
+        width: 100%;
+      }
+    }
   }
 
   &__images {
@@ -146,13 +155,14 @@
     margin-left: auto;
     margin-bottom: 48px;
 
-    // @include tablet {
-    //   margin-bottom: 0;
-    // }
+    @media (max-width: 1024px) {
+      margin-bottom: 0;
+    }
 
-    // @include mobile {
-    //   margin-inline: auto;
-    // }
+    @media (max-width: 768px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   &__dots {
@@ -161,8 +171,8 @@
     right: 0;
     width: 25.3%;
     aspect-ratio: 1;
-    background-image: radial-gradient(circle, rgba($white, 0.18) 2px, transparent 2.5px);
-    background-size: calc(100% / 8) calc(100% / 8);
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.18) 2px, transparent 2.5px);
+    background-size: 12.5% 12.5%;
     animation: fade-up 1s ease 0.8s backwards;
   }
 
@@ -170,9 +180,7 @@
     position: absolute;
     overflow: hidden;
     border-radius: 22px;
-    transition:
-      scale 0.4s ease,
-      rotate 0.4s ease;
+    transition: scale 0.4s ease, rotate 0.4s ease;
 
     &:hover {
       scale: 1.05;
@@ -190,9 +198,7 @@
       aspect-ratio: 1.5 / 1;
       background: linear-gradient(135deg, $accent, $accent-light);
       rotate: -3deg;
-      animation:
-        card-in 0.9s ease 0.3s backwards,
-        float 6s ease-in-out 1.2s infinite;
+      animation: card-in 0.9s ease 0.3s backwards, float 6s ease-in-out 1.2s infinite;
 
       &:hover {
         rotate: -1deg;
@@ -207,9 +213,7 @@
       aspect-ratio: 1;
       background-color: $lime;
       rotate: 6deg;
-      animation:
-        card-in 0.9s ease 0.5s backwards,
-        float 5s ease-in-out 1.4s infinite;
+      animation: card-in 0.9s ease 0.5s backwards, float 5s ease-in-out 1.4s infinite;
 
       &:hover {
         rotate: 3deg;
@@ -238,9 +242,7 @@
     font-weight: 500;
     white-space: nowrap;
     rotate: -9deg;
-    animation:
-      pop-in 0.6s ease 1.1s backwards,
-      wiggle 4s ease-in-out 1.7s infinite;
+    animation: pop-in 0.6s ease 1.1s backwards, wiggle 4s ease-in-out 1.7s infinite;
 
     strong {
       margin: 0 2px;

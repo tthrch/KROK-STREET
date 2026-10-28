@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"> -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
@@ -24,11 +23,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/main.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
     <title>KROK-STREET</title>
   </head>
 
   <body>
-    <header class="header">
+    <header class="header" id="header">
       <div class="ticker">
         <div class="ticker__track">
           <div class="ticker__group">
@@ -52,21 +52,21 @@
       </div>
 
       <div class="header__inner container">
-        <a href="#" class="logo">KROK <span class="logo__dot"></span> STREET</a>
+        <a href="#header" class="logo">KROK <span class="logo__dot"></span> STREET</a>
 
         <nav class="menu">
           <ul class="menu__list">
             <li class="menu__item">
-              <a href="#" class="menu__link">Головна</a>
+              <a href="#header" class="menu__link">Головна</a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link">Каталог</a>
+              <a href="#katalog" class="menu__link">Каталог</a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link">Про нас</a>
+              <a href="#about" class="menu__link">Про нас</a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link">Контакти</a>
+              <a href="#contacts" class="menu__link">Контакти</a>
             </li>
           </ul>
         </nav>
@@ -147,7 +147,7 @@
     </header>
 
     <main>
-             <section class="hero">
+      <section class="hero">
         <div class="hero__inner container">
           <div class="hero__content">
             <p class="hero__label">street style shop</p>
@@ -163,7 +163,7 @@
 
             <div class="hero__buttons">
               <a href="#katalog" class="btn btn--primary">Дивитись каталог</a>
-              <a href="#" class="btn btn--outline">Про магазин</a>
+              <a href="#about" class="btn btn--outline">Про магазин</a>
             </div>
           </div>
 
@@ -265,7 +265,7 @@
                         <img src="./imgs/katalog/blockletter.webp" alt="" class="product__img">
                         <p class="product__kategory">Худі</p>
                         <h3 class="product__title">Худі Blockletter</h3>
-                        <p class="product__price">1 450 ₴</p>
+                        <p class="product__price">1 450 ₴</p>
                         <button class="product__button">У кошик</button>
                     </li>
 
@@ -273,7 +273,7 @@
                         <img src="./imgs/katalog/cloud-wash.webp" alt="" class="product__img">
                         <p class="product__kategory">Худі</p>
                         <h3 class="product__title">Худі Cloudwash</h3>
-                        <p class="product__price">1 590 ₴</p>
+                        <p class="product__price">1 590 ₴</p>
                         <button class="product__button">У кошик</button>
                     </li>
 
@@ -281,7 +281,7 @@
                         <img src="./imgs/katalog/night-signal.webp" alt="" class="product__img">
                         <p class="product__kategory">Худі</p>
                         <h3 class="product__title">Худі Night Signal</h3>
-                        <p class="product__price">1 690 ₴</p>
+                        <p class="product__price">1 690 ₴</p>
                         <button class="product__button">У кошик</button>
                     </li>
 
@@ -289,7 +289,7 @@
                         <img src="./imgs/katalog/concrete.webp" alt="" class="product__img">
                         <p class="product__kategory">Худі</p>
                         <h3 class="product__title">Худі Concrete</h3>
-                        <p class="product__price">1 380 ₴</p>
+                        <p class="product__price">1 380 ₴</p>
                         <button class="product__button">У кошик</button>
                     </li>
 
@@ -447,7 +447,7 @@
           </div>
         </div>
       </section>
-         <section class="contacts">
+         <section class="contacts" id="contacts">
         <div class="container container-contacts">
           <div class="contacts__info">
             <h2 class="contacts__title">Контакти</h2>
@@ -526,10 +526,10 @@
           <div class="footer__column">
             <h3 class="footer__title">Навігація</h3>
 
-            <a href="#" class="footer__link">Головна</a>
+            <a href="#header" class="footer__link">Головна</a>
             <a href="#katalog" class="footer__link">Каталог</a>
-            <a href="#" class="footer__link">Про нас</a>
-            <a href="#" class="footer__link">Контакти</a>
+            <a href="#about" class="footer__link">Про нас</a>
+            <a href="#contacts" class="footer__link">Контакти</a>
           </div>
           <div class="footer__column">
             <h3 class="footer__title">Категорії</h3>
@@ -572,8 +572,6 @@
       </div>
     </footer>
 
-       
-   
     <script src="./js/hero.js"></script>
     <script src="./js/katalog.js"></script>
     <script src="./js/footer.js"></script>
