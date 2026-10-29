@@ -34,3 +34,48 @@ catalogButtons.forEach((button) => {
     });
   });
 });
+
+
+// search
+let searchInput = document.querySelector(`.search`);
+
+searchInput.addEventListener(`keydown`, (event) => {
+    if (event.key === `Enter`) {
+        searchProduct();
+    }
+});
+
+function searchProduct() {
+    let text = searchInput.value.toLowerCase().trim();
+    let foundIndex = -1;
+
+    for (let i = 0; i < products.length; i++) {
+        let name = products[i].name.toLowerCase();
+
+        if (name.includes(text)) {
+            foundIndex = i;
+            break;
+        }
+    }
+
+    if (text === `` || foundIndex === -1) {
+        alert(`Товар не знайдено`);
+        return;
+    }
+
+    if (isOpen === true) {
+        openModal(`close`);
+    }
+
+    resetFilters();
+
+    document.querySelector(`#katalog`).scrollIntoView({
+        behavior: `smooth`
+    });
+
+    searchInput.value = ``;
+
+    setTimeout(() => {
+        openModal(foundIndex);
+    }, 300);
+}
